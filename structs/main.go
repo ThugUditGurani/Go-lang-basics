@@ -1,47 +1,49 @@
 package main
 
-type contactinfo struct {
-	email   string
+import "fmt"
+
+type contactInfo struct {
+	email string
 	zipCode int
 }
 
+
 type person struct {
 	firstName string
-	lastName  string
-	contact   contactinfo
+	lastName string
+	contact contactInfo
 }
 
 func main() {
-	//alex := person{firstName: "Alex", lastName: "Anderson"}
+	//alex := person{
+	//	firstName: "Udit",
+	//	lastName:  "Gurani",
+	//}
 	//fmt.Println(alex)
-
-	// var alex person
-
-	// alex.firstName = "Alex"
-	// alex.lastName = "Anderson"
-
-	// fmt.Println(alex)
-	// fmt.Printf("%+v", alex)
+	//
+	//var alexOne person
+	//alexOne.firstName = "UditOne"
+	//alexOne.lastName = "SecondValue"
+	//fmt.Println(alexOne)
 
 	jim := person{
 		firstName: "Jim",
-		lastName:  "Party",
-		contact: contactinfo{
-			email:   "jim@gmail.com",
-			zipCode: 94000,
+		lastName:  "Anderson",
+		contact:   contactInfo{
+			email:   "jim.andeson@email.com",
+			zipCode: 0,
 		},
 	}
-
-	//jimPointer := &jim
-	jim.updateName("jimmy")
 	//jim.print()
-
+	//jimPointer := &jim
+	jim.updateName("JimmyOne")
+	fmt.Println(jim)
 }
 
-func (pointerToPerson *person) updateName(newFirstName string) {
-	(*pointerToPerson).firstName = newFirstName
+func (pointerTOPerson *person) updateName(newFirstName string)  {
+	pointerTOPerson.firstName = newFirstName
 }
 
-// func (p person) print() {
-// 	fmt.Printf("%+v", p)
-// }
+//func (p person) print() {
+//	fmt.Println("%+v",p)
+//}
